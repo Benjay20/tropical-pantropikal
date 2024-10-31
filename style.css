@@ -1,0 +1,98 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+/* Reset and Basic Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* Background Video Styling */
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Content Overlay Styling */
+.content {
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  max-width: 700px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  border-radius: 8px;
+}
+
+/* Text Styling */
+.content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Button Styling */
+.buttons button {
+  position: relative;
+  height: 60px;
+  width: 200px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.5s, transform 0.2s;
+}
+
+.buttons button:hover {
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  animation: glow 8s linear infinite;
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+}
+
+@keyframes glow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+/* Hide the audio element */
+audio {
+  display: none;
+}

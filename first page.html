@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tropical Delights</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <!-- Background Video -->
+    <video autoplay loop muted id="bgVideo">
+      <source src="bgvid/video 1.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Content Section with Overlay Text and Button -->
+    <div class="content">
+      <h1>Tropical Delights</h1>
+      <p>Escape to a paradise of flavors and unwind in a world of vibrant sights and sounds. Dive into the tropical vibe with us!</p>
+      <div class="buttons">
+        <button onclick="location.href='index.html'">Click Me</button>
+      </div>
+    </div>
+
+    <!-- Background Music with Volume Control -->
+    <audio id="bgMusic" autoplay loop>
+      <source src="bgvid/PANTROPICAL.mp3" type="audio/mpeg">
+      Your browser does not support HTML5 audio.
+    </audio>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const bgMusic = document.getElementById('bgMusic');
+        
+        // Try to play the audio immediately
+        bgMusic.volume = 0.2;
+        
+        // Handle autoplay blocking
+        bgMusic.play().catch(error => {
+          // Prompt user to interact to start music if autoplay is blocked
+          document.body.addEventListener('click', () => {
+            bgMusic.play();
+          }, { once: true });
+        });
+      });
+    </script>
+  </body>
+</html>
